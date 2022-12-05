@@ -78,6 +78,34 @@ const player = new Fighter({
         death:{
             imageSrc:'./img/samuraiMack/Death.png',
             framesMax:6
+        },
+        idleflip:{
+            imageSrc:'./img/samuraiMack/fIdle.png',
+            framesMax:8
+        },
+        runflip:{
+            imageSrc:'./img/samuraiMack/fRun.png',
+            framesMax:8
+        },
+        jumpflip:{
+            imageSrc:'./img/samuraiMack/fJump.png',
+            framesMax:2
+        },
+        fallflip:{
+            imageSrc:'./img/samuraiMack/fFall.png',
+            framesMax:2
+        },
+        attack1flip:{
+            imageSrc:'./img/samuraiMack/fAttack1.png',
+            framesMax:6
+        },
+        takeHitflip:{
+            imageSrc:'./img/samuraiMack/fTake Hit - white silhouette.png',
+            framesMax:4
+        },
+        deathflip:{
+            imageSrc:'./img/samuraiMack/fDeath.png',
+            framesMax:6
         }
     },
     attackBox:{
@@ -108,6 +136,7 @@ const enemy = new Fighter({
     imageSrc:'./img/kenji/Idle.png',
     framesMax:8,
     scale:2.5,
+    lastVelocity :0,
     offset:{x:215,y:170},
     sprites:{
         idle:{
@@ -136,6 +165,34 @@ const enemy = new Fighter({
         },
         death:{
             imageSrc:'./img/kenji/Death.png',
+            framesMax:7
+        },
+        idleflip:{
+            imageSrc:'./img/kenji/Idle-flip.png',
+            framesMax:4
+        },
+        runflip:{
+            imageSrc:'./img/kenji/Run-flip.png',
+            framesMax:8
+        },
+        jumpflip:{
+            imageSrc:'./img/kenji/Jump-flip.png',
+            framesMax:2
+        },
+        fallflip:{
+            imageSrc:'./img/kenji/Fall-flip.png',
+            framesMax:2
+        },
+        attack1flip:{
+            imageSrc:'./img/kenji/Attack1-flip.png',
+            framesMax:4
+        },
+        takeHitflip:{
+            imageSrc:'./img/kenji/take Hit-flip.png',
+            framesMax:3
+        },
+        deathflip:{
+            imageSrc:'./img/kenji/Death-flip.png',
             framesMax:7
         }
     },
@@ -193,6 +250,8 @@ function animate(){
     c.fillRect(0,0,canvas.width,canvas.height)
     player.update()
     enemy.update()
+    player.fupdate()
+    enemy.fupdate()
     
     player.velocity.x=0
     enemy.velocity.x=0
@@ -203,49 +262,81 @@ function animate(){
         
         if(keys.a.pressed && player.lastKey==='a'){
             player.velocity.x=-5
-            player.switchSprite('run')}
+            player.lastVelocity = player.velocity.x
+            player.switchSprite('run-flip')}
         else if(keys.d.pressed&&player.lastKey==='d'){
             player.velocity.x=5
+            player.lastVelocity = player.velocity.x
             player.switchSprite('run')        }
         else if(keys.a.pressed&&player.lastKey==='d'){
             player.velocity.x=-5
-            player.switchSprite('run')        }
+            player.lastVelocity = player.velocity.x
+            player.switchSprite('run-flip')        }
         else if(keys.d.pressed&&player.lastKey==='a'){
             player.velocity.x=5
-            player.switchSprite('run')        }
-        else{
-                player.switchSprite('idle')
-            }
+            player.lastVelocity = player.velocity.x
+            player.switchSprite('run')        
+        } else if(player.lastVelocity===-5&&keys.a.pressed==false&&keys.d.pressed==false){
+            player.switchSprite('idle-flip')
+        }else{
+            player.switchSprite('idle')
+        }
 
-        if(player.velocity.y<0){
+        if(player.lastVelocity===-5&&player.velocity.y<0){
+            player.switchSprite('jump-flip')
+        }else if(player.velocity.y>0&&player.lastVelocity===-5){
+            player.switchSprite('fall-flip')
+        }else if(player.velocity.y<0){
             player.switchSprite('jump')
         }else if(player.velocity.y>0){
             player.switchSprite('fall')
         }
 
+        if(player.velocity.x===-5){
+            player.attackbox.offset.x=-240
+        }else if(player.velocity.x===5) {
+            player.attackbox.offset.x=30
+        }
+
         if(keys.ArrowLeft.pressed && enemy.lastKey==='ArrowLeft'){
             enemy.velocity.x=-5
+            enemy.lastVelocity=enemy.velocity.x
             enemy.switchSprite('run')
         }
         else if(keys.ArrowRight.pressed&&enemy.lastKey==='ArrowRight'){
             enemy.velocity.x=5
-            enemy.switchSprite('run')
+            enemy.lastVelocity=enemy.velocity.x
+            enemy.switchSprite('run-flip')
         }
-        else if(keys.ArrowLeft.pressed&&enemy.lastKey==='dArrowRight'){
+        else if(keys.ArrowLeft.pressed&&enemy.lastKey==='ArrowRight'){
             enemy.velocity.x=-5
+            enemy.lastVelocity=enemy.velocity.x
             enemy.switchSprite('run')
         }
         else if(keys.ArrowRight.pressed&&enemy.lastKey==='ArrowLeft'){
             enemy.velocity.x=5
-            enemy.switchSprite('run')
-        } else{
+            enemy.lastVelocity=enemy.velocity.x
+            enemy.switchSprite('run-flip')
+        } else if(enemy.lastVelocity===5&&keys.ArrowLeft.pressed==false&&keys.ArrowRight.pressed==false){
+            enemy.switchSprite('idle-flip')
+        }else{
             enemy.switchSprite('idle')
         }
 
-        if(enemy.velocity.y<0){
+        if(enemy.lastVelocity===5&&enemy.velocity.y<0){
+            enemy.switchSprite('jump-flip')
+        }else if(enemy.velocity.y>0&&enemy.lastVelocity===5){
+            enemy.switchSprite('fall-flip')
+        }else if(enemy.velocity.y<0){
             enemy.switchSprite('jump')
         }else if(enemy.velocity.y>0){
             enemy.switchSprite('fall')
+        }
+
+        if(enemy.velocity.x===-5){
+            enemy.attackbox.offset.x=-220
+        }else if(enemy.velocity.x===5) {
+            enemy.attackbox.offset.x=50
         }
 
         //detect for collison
@@ -253,8 +344,19 @@ function animate(){
             rectangle1:player,
             rectangle2: enemy
         })
-            &&player.isAttacking&&player.framesCurrent===4){
+            &&player.isAttacking&&player.framesCurrent===4&&enemy.lastVelocity===-5){
             enemy.takeHit()
+            player.isAttacking=false
+            gsap.to('#enemyHealth',{
+                width:enemy.health+'%'
+            })
+        
+        }else if(rectangularCollision({
+            rectangle1:player,
+            rectangle2: enemy
+        })
+            &&player.isAttacking&&player.framesCurrent===4&&enemy.lastVelocity===5){
+            enemy.fTakeHit()
             player.isAttacking=false
             gsap.to('#enemyHealth',{
                 width:enemy.health+'%'
@@ -270,7 +372,8 @@ function animate(){
             rectangle2: player
         })
             &&enemy.isAttacking
-            &&enemy.framesCurrent===2){
+            &&enemy.framesCurrent===2
+            &&player.lastVelocity===5){
 
             player.takeHit()
             enemy.isAttacking=false
@@ -278,9 +381,23 @@ function animate(){
                 width:player.health+'%'
             })
         
+        }else if(rectangularCollision({
+            rectangle1:enemy,
+            rectangle2: player
+        })
+            &&enemy.isAttacking
+            &&enemy.framesCurrent===2
+            &&player.lastVelocity===-5){
+
+            player.fTakeHit()
+            enemy.isAttacking=false
+            gsap.to('#playerHealth',{
+                width:player.health+'%'
+            })
+        
         }
 
-        if(enemy.isAttacking&&enemy.framesCurrent===2){
+        if(enemy.isAttacking&&(enemy.framesCurrent===2)){
             enemy.isAttacking=false
         }
 
@@ -308,7 +425,11 @@ window.addEventListener('keydown',(event)=>{
             player.velocity.y =-20
             break
         case ' ':
-            player.attack()
+            if(player.lastVelocity===-5){
+                player.fAttack()
+            }else{
+                player.attack()
+            }
             break
         }
     }
@@ -326,7 +447,11 @@ window.addEventListener('keydown',(event)=>{
             enemy.velocity.y =-20
             break
         case 'g':
-            enemy.attack()
+            if(enemy.lastVelocity===5){
+                enemy.fAttack()
+            }else{
+                enemy.attack()
+            }
             break
     }
 }
