@@ -138,7 +138,7 @@ class Fighter extends sprite{
         this.attackbox.position.x=this.position.x+this.width + this.attackbox.offset.x
         this.attackbox.position.y=this.position.y + this.attackbox.offset.y
 
-        c.fillRect(this.attackbox.position.x, this.attackbox.position.y, this.attackbox.width,this.attackbox.height)
+        //c.fillRect(this.attackbox.position.x, this.attackbox.position.y, this.attackbox.width,this.attackbox.height)
 
         this.position.x+=this.velocity.x
         this.position.y+=this.velocity.y
@@ -187,7 +187,7 @@ class Fighter extends sprite{
             return}
         if (this.image===this.sprites.attack1.image&&this.framesCurrent<this.sprites.attack1.framesMax-1) return
         if (this.image===this.sprites.takeHit.image&&this.framesCurrent<this.sprites.takeHit.framesMax-1) return
-        if (this.image===this.sprites.deathflip.image/2){ 
+        if (this.image===this.sprites.deathflip.image){ 
             if(this.framesCurrentFlip===this.framesMax)
                 this.dead=true
             return}
