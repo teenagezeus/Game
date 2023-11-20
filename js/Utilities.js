@@ -27,6 +27,11 @@ let timerId
 function decreaseTimer(){
     if (timer>0) {
 
+        if (timer>57&&timer<61) {
+            document.querySelector('#Player2Speech')
+            document.querySelector('#Player2Speech').style.display='flex'
+        }
+
         timerId = setTimeout(decreaseTimer,1000)
         timer--
         document.querySelector('#timer').innerHTML = timer
