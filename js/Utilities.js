@@ -14,11 +14,11 @@ function determineWinner({player, enemy, timerId}){
         document.querySelector('#displayText').style.display='flex'
     }
     else if(player.health>enemy.health){
-        document.querySelector('#displayText').innerHTML='Player 1 Wins!'
+        document.querySelector('#displayText').innerHTML='Player 1 Wins!\nI fight to honour Mr. Choshi!'
         document.querySelector('#displayText').style.display='flex'
     }
     else{
-        document.querySelector('#displayText').innerHTML='Player 2 Wins!'
+        document.querySelector('#displayText').innerHTML='Player 2 Wins!\nI fight to honour Mr. Chosi!'
         document.querySelector('#displayText').style.display='flex'
     }
 }
