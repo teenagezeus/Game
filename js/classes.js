@@ -110,6 +110,7 @@ class Fighter extends sprite{
                 sprites[sprite].image=new Image()
                 sprites[sprite].image.src = sprites[sprite].imageSrc
             }
+
     }
 
     

@@ -120,6 +120,9 @@ const player = new Fighter({
 })
 
     //creating enemy
+    document.querySelector('#Player1Speech').innerHTML='Player 1 Wins!\nI fight to honour Mr. Choshi!'
+    document.querySelector('#Player1Speech').style.display='flex'
+
 const enemy = new Fighter({
     position:{
         x : 400,
