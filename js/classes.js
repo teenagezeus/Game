@@ -13,7 +13,6 @@ class sprite{
             this.framesHold = 10
             this.offset=offset
     }
-
     draw(){
         c.drawImage(this.image,
                     this.framesCurrent*(this.image.width/this.framesMax),
@@ -25,9 +24,7 @@ class sprite{
                     (this.image.width/this.framesMax)*this.scale,
                     this.image.height*this.scale)
     }
-
     animateFrames(){
-
         this.framesElapsed++
         if(this.framesElapsed%this.framesHold===0){
             if(this.framesCurrent<this.framesMax-1){
@@ -53,9 +50,7 @@ class sprite{
                     (this.image.width/this.framesMax)*this.scale,
                     this.image.height*this.scale)
     }
-
     fanimateFrames(){
-
         this.framesHold=10
         this.framesElapsed++
         if(this.framesElapsed%this.framesHold===0){
@@ -70,10 +65,8 @@ class sprite{
         }
     }
     
-
     
 }
-
 class Fighter extends sprite{
     constructor({position, velocity, color,imageSrc,scale=1,framesMax=1,offset={x:0,y:0},sprites,attackBox={offset:{},width:undefined, height:undefined}}){
             super({position,
@@ -91,7 +84,6 @@ class Fighter extends sprite{
                 position :{
                     x:this.position.x,
                     y:this.position.y
-
                 },
                 height:attackBox.height,
                 offset:attackBox.offset
@@ -105,14 +97,11 @@ class Fighter extends sprite{
             this.framesHold = 5
             this.sprites = sprites
             this.dead = false
-
             for(const sprite in this.sprites){
                 sprites[sprite].image=new Image()
                 sprites[sprite].image.src = sprites[sprite].imageSrc
             }
-
     }
-
     
         //how the characters will move
     update(){
@@ -120,12 +109,9 @@ class Fighter extends sprite{
         if(!this.dead)this.animateFrames()
         this.attackbox.position.x=this.position.x + this.attackbox.offset.x
         this.attackbox.position.y=this.position.y + this.attackbox.offset.y
-
         //c.fillRect(this.attackbox.position.x, this.attackbox.position.y, this.attackbox.width,this.attackbox.height)
-
         this.position.x+=this.velocity.x
         this.position.y+=this.velocity.y
-
         if(this.position.y+this.height+ this.velocity.y>=canvas.height-96){
             this.velocity.y =0
             this.position.y=330
@@ -139,17 +125,16 @@ class Fighter extends sprite{
         this.attackbox.position.x=this.position.x+this.width + this.attackbox.offset.x
         this.attackbox.position.y=this.position.y + this.attackbox.offset.y
 
+        c.fillRect(this.attackbox.position.x, this.attackbox.position.y, this.attackbox.width,this.attackbox.height)
         //c.fillRect(this.attackbox.position.x, this.attackbox.position.y, this.attackbox.width,this.attackbox.height)
 
         this.position.x+=this.velocity.x
         this.position.y+=this.velocity.y
-
         if(this.position.y+this.height+ this.velocity.y>=canvas.height-96){
             this.velocity.y =0
             this.position.y=330
         }else this.velocity.y+=gravity
     }
-
     attack(){
         this.switchSprite('attack1')
         this.isAttacking = true
@@ -181,13 +166,13 @@ class Fighter extends sprite{
         }
     }
     switchSprite(sprite){
-
         if (this.image===this.sprites.death.image){ 
             if(this.framesCurrent===this.sprites.death.framesMax-1)
                 this.dead=true
             return}
         if (this.image===this.sprites.attack1.image&&this.framesCurrent<this.sprites.attack1.framesMax-1) return
         if (this.image===this.sprites.takeHit.image&&this.framesCurrent<this.sprites.takeHit.framesMax-1) return
+        if (this.image===this.sprites.deathflip.image/2){ 
         if (this.image===this.sprites.deathflip.image){ 
             if(this.framesCurrentFlip===this.framesMax)
                 this.dead=true
@@ -320,5 +305,5 @@ class Fighter extends sprite{
                 break
         }
     }
-
+}
 }
