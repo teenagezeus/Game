@@ -74,7 +74,7 @@ function decreaseSecondaryTimer(){
         document.querySelector('#speechbubble2').innerHTML=''
         document.querySelector('#speechbubble2').style.display='flex'
         var gfg_down = 
-                document.getElementById("speechbubble2");
+                document.getElementById("#speechbubble2");
                 gfg_down.parentNode.removeChild(gfg_down);
         decreaseTimer()
   
