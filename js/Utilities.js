@@ -27,8 +27,8 @@ let timerId
 function decreaseTimer(){
     if (timer>0) {
 
-        document.querySelector('#player1Text').innerHTML='Mr Choshi hahaha'
-        document.querySelector('#player1Text').style.display='flex'
+        document.querySelector('#speech-bubble').innerHTML='Mr Choshi hahaha'
+        document.querySelector('#speech-bubble').style.display='flex'
 
         if(timer<57)
         {
