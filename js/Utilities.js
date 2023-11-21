@@ -58,7 +58,7 @@ function decreaseSecondaryTimer(){
         {
             document.querySelector('#speechbubble').innerHTML=''
             document.querySelector('#speechbubble').style.display='flex'
-            $("#speechbubble").parentNode.removeChild();
+            
             $("#speechbubble2").show();
             document.querySelector('#speechbubble2').innerHTML='If I win, the ever so kind, ever so gracious, Mr Choshi will mark his assignment with no penalisation!'
             document.querySelector('#speechbubble2').style.display='flex'
@@ -75,7 +75,7 @@ function decreaseSecondaryTimer(){
         secondaryTimer = 0;    
         document.querySelector('#speechbubble2').innerHTML=''
         document.querySelector('#speechbubble2').style.display='flex'
-        $("#speechbubble").parentNode.removeChild();
+        
         decreaseTimer()
   
     }
