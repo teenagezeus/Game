@@ -27,7 +27,7 @@ function determineWinner({player, enemy, timerId}){
     }
     else{
         let num1 = rectangle2.attackbox.position.x;
-        let text1 = num.toString()+'px';
+        let text1 = num1.toString()+'px';
         document.querySelector('#displayText').innerHTML='Player 2 Wins!'
         document.querySelector('#displayText').style.display='flex'
         document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
