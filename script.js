@@ -35,7 +35,7 @@ const shop= new sprite({
     //creating player
 const player = new Fighter({
     position:{
-        x : 0,
+        x : 400,
         y : 0
     },
     velocity:{      
@@ -122,7 +122,7 @@ const player = new Fighter({
     //creating enemy
 const enemy = new Fighter({
     position:{
-        x : 400,
+        x : 2000,
         y : 100
     },
     velocity:{      
