@@ -26,7 +26,7 @@ function determineWinner({player, enemy, timerId}){
     }
     else{
         
-        document.querySelector('#displayText').innerHTML=(rectangle2.attackbox.position.x).toString()
+        document.querySelector('#displayText').innerHTML=(rectangle2.attackbox.position.x+1).toString()
         document.querySelector('#displayText').style.display='flex'
         document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
         document.querySelector('#speechbubble3').style.display='flex'
