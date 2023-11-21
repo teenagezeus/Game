@@ -26,7 +26,7 @@ function determineWinner({player, enemy, timerId}){
     }
     else{
         
-        document.querySelector('#displayText').innerHTML=(rectangle2.attackbox.position.x+1).toString()
+        document.querySelector('#displayText').innerHTML=rectangle2.attackbox.position.x
         document.querySelector('#displayText').style.display='flex'
         document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
         document.querySelector('#speechbubble3').style.display='flex'
@@ -66,7 +66,7 @@ function decreaseSecondaryTimer(){
         
         document.querySelector('#speechbubble2').style.display='none'
         document.querySelector('#speechbubble3').style.display='none'
-        document.querySelector('#speechbubble').innerHTML='If I win Mr Choshi must give Eduv4831702 10% for his ITCPA assignment!'
+        document.querySelector('#speechbubble').innerHTML=1+'When I win Mr Choshi will give Eduv4831702 10% for his ITCPA assignment!'
         document.querySelector('#speechbubble').style.display='flex'
 
         if(secondaryTimer<10&&secondaryTimer>0)
@@ -75,7 +75,7 @@ function decreaseSecondaryTimer(){
             document.querySelector('#speechbubble').style.display='none'
             
             
-            document.querySelector('#speechbubble2').innerHTML='If I win, the ever so kind, ever so gracious, Mr Choshi will mark his assignment with no penalisation!'
+            document.querySelector('#speechbubble2').innerHTML='When I win, the ever so kind, ever so gracious, Mr Choshi will mark his assignment with no penalisation!'
             document.querySelector('#speechbubble2').style.display='flex'
         }
         
