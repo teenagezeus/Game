@@ -69,11 +69,11 @@ function decreaseSecondaryTimer(){
     else{
         
         
-            document.querySelector('#speechbubble2').innerHTML=''
-            document.querySelector('#speechbubble2').style.display='flex'
-            decreaseTimer()
-
-        
+        secondaryTimer = 0;    
+        document.querySelector('#speechbubble2').innerHTML=''
+        document.querySelector('#speechbubble2').style.display='flex'
+        decreaseTimer()
+  
     }
     
 }
