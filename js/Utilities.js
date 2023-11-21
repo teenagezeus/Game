@@ -27,13 +27,13 @@ let timerId
 function decreaseTimer(){
     if (timer>0) {
 
-        document.querySelector('#speech-bubble').innerHTML='Mr Choshi hahaha'
-        document.querySelector('#speech-bubble').style.display='flex'
+        document.querySelector('#speechbubble').innerHTML='Mr Choshi hahaha'
+        document.querySelector('#speechbubble').style.display='flex'
 
         if(timer<57)
         {
-            document.querySelector('#player1Text').innerHTML=''
-            document.querySelector('#player1Text').style.display='flex'
+            document.querySelector('#speechbubble').innerHTML=''
+            document.querySelector('#speechbubble').style.display='flex'
         }
 
         timerId = setTimeout(decreaseTimer,1000)
