@@ -18,7 +18,7 @@ function determineWinner({player, enemy, timerId,rectangle1,rectangle2}){
         
         document.querySelector('#displayText').innerHTML='Player 1 Wins!'
         document.querySelector('#displayText').style.display='flex'
-        document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
+        document.querySelector('#speechbubble3').innerHTML='Player 2 rests peacefully as he knows he fought honourably and has made Mr Choshi proud. Mr Choshi goes on to mark Eduv4831702\'s assignment without penalization in honour of player 2\'s noble sacrifice.'
         document.querySelector('#speechbubble3').style.display='flex'
         
         
@@ -27,7 +27,7 @@ function determineWinner({player, enemy, timerId,rectangle1,rectangle2}){
         
         document.querySelector('#displayText').innerHTML='Player 2 Wins!'
         document.querySelector('#displayText').style.display='flex'
-        document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
+        document.querySelector('#speechbubble3').innerHTML='Player 1 rests peacefully as he knows he fought honourably and has made Mr Choshi proud. Mr Choshi honours the agreement that was made between his two noble disciples and goes on to mark Eduv4831702\'s assignment without penalization.'
         document.querySelector('#speechbubble3').style.display='flex'
         
         
