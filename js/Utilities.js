@@ -50,6 +50,7 @@ let secondaryTimerId
 function decreaseSecondaryTimer(){
     if (secondaryTimer>0) {
 
+        $("#speechbubble").show();
         document.querySelector('#speechbubble').innerHTML='If I win Mr Choshi must give Eduv4831702 10% for his ITCPA assignment!'
         document.querySelector('#speechbubble').style.display='flex'
 
@@ -57,7 +58,8 @@ function decreaseSecondaryTimer(){
         {
             document.querySelector('#speechbubble').innerHTML=''
             document.querySelector('#speechbubble').style.display='flex'
-            document.getElementById("#speechbubble").outerHTML = "";
+            $("#speechbubble").parentNode.removeChild();
+            $("#speechbubble2").show();
             document.querySelector('#speechbubble2').innerHTML='If I win, the ever so kind, ever so gracious, Mr Choshi will mark his assignment with no penalisation!'
             document.querySelector('#speechbubble2').style.display='flex'
         }
@@ -73,9 +75,7 @@ function decreaseSecondaryTimer(){
         secondaryTimer = 0;    
         document.querySelector('#speechbubble2').innerHTML=''
         document.querySelector('#speechbubble2').style.display='flex'
-        var gfg_down = 
-                document.getElementById("#speechbubble2");
-                gfg_down.parentNode.removeChild(gfg_down);
+        $("#speechbubble").parentNode.removeChild();
         decreaseTimer()
   
     }
