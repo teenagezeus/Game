@@ -53,15 +53,13 @@ function decreaseSecondaryTimer(){
         document.querySelector('#speechbubble').innerHTML='If I win Mr Choshi must give Eduv4831702 10% for his ITCPA assignment!'
         document.querySelector('#speechbubble').style.display='flex'
 
-        if(secondaryTimer<10)
+        if(secondaryTimer<10&&secondaryTimer>0)
         {
             document.querySelector('#speechbubble').innerHTML=''
             document.querySelector('#speechbubble').style.display='flex'
             document.querySelector('#speechbubble2').innerHTML='If I win, the ever so kind, ever so gracious, Mr Choshi will mark his assignment with no penalisation!'
             document.querySelector('#speechbubble2').style.display='flex'
-        }
-
-        if(secondaryTimer==0)
+        }else if(secondaryTimer<1)
         {
             document.querySelector('#speechbubble2').innerHTML=''
             document.querySelector('#speechbubble2').style.display='flex'
