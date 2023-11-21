@@ -73,7 +73,9 @@ function decreaseSecondaryTimer(){
         secondaryTimer = 0;    
         document.querySelector('#speechbubble2').innerHTML=''
         document.querySelector('#speechbubble2').style.display='flex'
-        document.getElementById("#speechbubble2").outerHTML = "";
+        var gfg_down = 
+                document.getElementById("speechbubble2");
+                gfg_down.parentNode.removeChild(gfg_down);
         decreaseTimer()
   
     }
