@@ -35,7 +35,7 @@ const shop= new sprite({
     //creating player
 const player = new Fighter({
     position:{
-        x : 200,
+        x : 150,
         y : 0
     },
     velocity:{      
