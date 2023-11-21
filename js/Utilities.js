@@ -27,18 +27,50 @@ let timerId
 function decreaseTimer(){
     if (timer>0) {
 
-        document.querySelector('#speechbubble').innerHTML='If I win Mr Choshi must give Eduv4831702 10% for his ITCPA assignment'
-        document.querySelector('#speechbubble').style.display='flex'
+        document.querySelector('#displayText').innerHTML='Fight!'
+        document.querySelector('#displayText').style.display='flex'
 
         if(timer<57)
         {
-            document.querySelector('#speechbubble').innerHTML=''
-            document.querySelector('#speechbubble').style.display='flex'
+            document.querySelector('#displayText').innerHTML=''
+            document.querySelector('#displayText').style.display='flex'
         }
 
         timerId = setTimeout(decreaseTimer,1000)
         timer--
         document.querySelector('#timer').innerHTML = timer
+    }
+    else{
+        determineWinner({player,enemy,timerId})
+    }
+}
+
+let secondaryTimer = 20
+let secondaryTimerId
+function decreaseSecondaryTimer(){
+    if (secondaryTimer>0) {
+
+        document.querySelector('#speechbubble').innerHTML='If I win Mr Choshi must give Eduv4831702 10% for his ITCPA assignment!'
+        document.querySelector('#speechbubble').style.display='flex'
+
+        if(secondaryTimer<10)
+        {
+            document.querySelector('#speechbubble').innerHTML=''
+            document.querySelector('#speechbubble').style.display='flex'
+            document.querySelector('#speechbubble2').innerHTML='If I win, the ever so kind, ever so gracious, Mr Choshi will mark his assignment with no penalisation!'
+            document.querySelector('#speechbubble2').style.display='flex'
+        }
+
+        if(secondaryTimer==0)
+        {
+            document.querySelector('#speechbubble2').innerHTML=''
+            document.querySelector('#speechbubble2').style.display='flex'
+            decreaseTimer()
+
+        }
+
+        timerId = setTimeout(decreaseTimer,1000)
+        timer--
     }
     else{
         determineWinner({player,enemy,timerId})

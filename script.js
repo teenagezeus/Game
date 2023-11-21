@@ -236,7 +236,7 @@ const keys={
 }
 
 
-decreaseTimer()
+decreaseSecondaryTimer()
 
     //character moving seperately from background
 function animate(){
