@@ -20,18 +20,16 @@ function determineWinner({player, enemy, timerId,rectangle1,rectangle2}){
         document.querySelector('#displayText').style.display='flex'
         document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
         document.querySelector('#speechbubble3').style.display='flex'
-        document.getElementById('speechbubble3').style.top = '150px'
-        document.getElementById('speechbubble3').style.left=rectangle1.attackbox.position.x+'px';
+        
         
     }
     else{
         
-        document.querySelector('#displayText').innerHTML=rectangle2.attackbox.position.x
+        document.querySelector('#displayText').innerHTML='Player 2 Wins!'
         document.querySelector('#displayText').style.display='flex'
         document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
         document.querySelector('#speechbubble3').style.display='flex'
-        document.getElementById('speechbubble3').style.top = '150px'
-        document.getElementById('speechbubble3').style.left=rectangle2.attackbox.position.x+'px';
+        
         
     }
 }
@@ -66,7 +64,7 @@ function decreaseSecondaryTimer(){
         
         document.querySelector('#speechbubble2').style.display='none'
         document.querySelector('#speechbubble3').style.display='none'
-        document.querySelector('#speechbubble').innerHTML=1+'When I win Mr Choshi will give Eduv4831702 10% for his ITCPA assignment!'
+        document.querySelector('#speechbubble').innerHTML='When I win Mr Choshi will give Eduv4831702 10% for his ITCPA assignment!'
         document.querySelector('#speechbubble').style.display='flex'
 
         if(secondaryTimer<10&&secondaryTimer>0)

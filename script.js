@@ -115,7 +115,7 @@ const player = new Fighter({
         },
         width:180,
         height:50
-    } 
+    }
 
 })
 
