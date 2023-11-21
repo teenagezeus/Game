@@ -18,7 +18,7 @@ function determineWinner({player, enemy, timerId,rectangle1,rectangle2}){
         
         document.querySelector('#displayText').innerHTML='Player 1 Wins!'
         document.querySelector('#displayText').style.display='flex'
-        document.querySelector('#speechbubble3').innerHTML='Player 2 rests peacefully as he knows he fought honourably and has made Mr Choshi proud. Mr Choshi goes on to mark Eduv4831702\'s assignment without penalization in honour of player 2\'s noble sacrifice.'
+        document.querySelector('#speechbubble3').innerHTML='Player 2 rests peacefully as he knows he fought honourably and has made Master Choshi proud. Mr Choshi goes on to mark Eduv4831702\'s assignment without penalization in honour of player 2\'s noble sacrifice.'
         document.querySelector('#speechbubble3').style.display='flex'
         
         
@@ -27,7 +27,7 @@ function determineWinner({player, enemy, timerId,rectangle1,rectangle2}){
         
         document.querySelector('#displayText').innerHTML='Player 2 Wins!'
         document.querySelector('#displayText').style.display='flex'
-        document.querySelector('#speechbubble3').innerHTML='Player 1 rests peacefully as he knows he fought honourably and has made Mr Choshi proud. Mr Choshi honours the agreement that was made between his two noble disciples and goes on to mark Eduv4831702\'s assignment without penalization.'
+        document.querySelector('#speechbubble3').innerHTML='Player 1 rests peacefully as he knows he fought honourably and has made Master Choshi proud. Mr Choshi honours the agreement that was made between his two noble disciples and goes on to mark Eduv4831702\'s assignment without penalization.'
         document.querySelector('#speechbubble3').style.display='flex'
         
         
@@ -64,7 +64,7 @@ function decreaseSecondaryTimer(){
         
         document.querySelector('#speechbubble2').style.display='none'
         document.querySelector('#speechbubble3').style.display='none'
-        document.querySelector('#speechbubble').innerHTML='When I win Mr Choshi will give Eduv4831702 10% for his ITCPA assignment!'
+        document.querySelector('#speechbubble').innerHTML='When I win Master Choshi will give Eduv4831702 10% for his ITCPA assignment!'
         document.querySelector('#speechbubble').style.display='flex'
 
         if(secondaryTimer<10&&secondaryTimer>0)
@@ -73,7 +73,7 @@ function decreaseSecondaryTimer(){
             document.querySelector('#speechbubble').style.display='none'
             
             
-            document.querySelector('#speechbubble2').innerHTML='When I win, the ever so kind, ever so gracious, Mr Choshi will mark his assignment with no penalisation!'
+            document.querySelector('#speechbubble2').innerHTML='When I win, the ever so kind, ever so gracious, Master Choshi will mark his assignment with no penalisation!'
             document.querySelector('#speechbubble2').style.display='flex'
         }
         
