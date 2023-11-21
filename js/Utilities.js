@@ -17,15 +17,15 @@ function determineWinner({player, enemy, timerId}){
         document.querySelector('#displayText').innerHTML='Player 1 Wins!'
         document.querySelector('#displayText').style.display='flex'
         document.querySelector('#speechbubble3').style.top = '150px';
-        document.querySelector('#speechbubble3').style.display=rectangle1.position + 10
+        document.querySelector('#speechbubble3').style.left=rectangle1.position + 10
         document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your bravery and honour as he gives Eduv4831702 10%'
         document.querySelector('#speechbubble3').style.display='flex'
     }
     else{
         document.querySelector('#displayText').innerHTML='Player 2 Wins!'
         document.querySelector('#displayText').style.display='flex'
-        document.querySelector('#speechbubble3').style.top = '150px';
-        document.querySelector('#speechbubble3').style.display=rectangle1.position - 150
+        document.querySelector('#speechbubble3').style.top = '150px'
+        document.querySelector('#speechbubble3').style.left=rectangle1.position - 150
         document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
         document.querySelector('#speechbubble3').style.display='flex'
     }
