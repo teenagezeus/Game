@@ -6,6 +6,9 @@ function rectangularCollision({rectangle1,rectangle2}){
             &&rectangle1.attackbox.position.y+rectangle1.attackbox.height<=rectangle2.position.y+rectangle2.height)
     )
 }
+
+let num = rectangle2.attackbox.position.x;
+let text = num.toString()+'px';
 function determineWinner({player, enemy, timerId}){
     clearTimeout(timerId)
     timer=0
@@ -18,8 +21,8 @@ function determineWinner({player, enemy, timerId}){
         document.querySelector('#displayText').style.display='flex'
         document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
         document.querySelector('#speechbubble3').style.display='flex'
-        document.querySelector('#speechbubble3').style.top = '150px'
-        document.querySelector('#speechbubble3').style.left=rectangle2.attackbox.position.x.toString()+'px';
+        document.getElementById('speechbubble3').style.top = '150px'
+        document.getElementById('speechbubble3').style.left=text;
         
     }
     else{
@@ -27,8 +30,8 @@ function determineWinner({player, enemy, timerId}){
         document.querySelector('#displayText').style.display='flex'
         document.querySelector('#speechbubble3').innerHTML='You have fought well. Rest now, Mr Choshi would be proud. I will be sure to tell him of your courage and true heart as he marks Eduv4831702s assignment'
         document.querySelector('#speechbubble3').style.display='flex'
-        document.querySelector('#speechbubble3').style.top = '150px'
-        document.querySelector('#speechbubble3').style.left=rectangle2.attackbox.position.x.toString() +'px';
+        document.getElementById('speechbubble3').style.top = '150px'
+        document.getElementById('speechbubble3').style.left=text;
         
     }
 }
