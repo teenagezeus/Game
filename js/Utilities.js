@@ -27,9 +27,12 @@ let timerId
 function decreaseTimer(){
     if (timer>0) {
 
-        if(timer>57&&timer<61)
+        document.querySelector('#player1Text').innerHTML='Mr Choshi hahaha'
+        document.querySelector('#player1Text').style.display='flex'
+
+        if(timer<57)
         {
-            document.querySelector('#player1Text').innerHTML='If i win mr Choshi has to ntoninton'
+            document.querySelector('#player1Text').innerHTML=''
             document.querySelector('#player1Text').style.display='flex'
         }
 
