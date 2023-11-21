@@ -27,7 +27,7 @@ let timerId
 function decreaseTimer(){
     if (timer>0) {
 
-        document.querySelector('#speechbubble').innerHTML='Mr Choshi hahaha'
+        document.querySelector('#speechbubble').innerHTML='If I win Mr Choshi must give Eduv4831702 10% for his ITCPA assignment'
         document.querySelector('#speechbubble').style.display='flex'
 
         if(timer<57)
