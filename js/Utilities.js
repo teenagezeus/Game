@@ -69,10 +69,8 @@ function decreaseSecondaryTimer(){
 
         }
 
-        timerId = setTimeout(decreaseTimer,1000)
-        timer--
+        secondaryTimerId = setTimeout(decreaseSecondaryTimer,1000)
+        secondaryTimer--
     }
-    else{
-        determineWinner({player,enemy,timerId})
-    }
+    
 }
